@@ -4,7 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  const response = await api('/products/featured')
+  const response = await api('/products/featured', {
+    cache: 'no-store',
+    // next: {
+    //   revalidate: 60 * 60, // 1 hour
+    // },
+  })
+
   const products = await response.json()
 
   return products
@@ -44,7 +50,7 @@ export default async function Home() {
       {otherProducts.map((product) => (
         <Link
           key={product.id}
-          href={product.slug}
+          href={`/product/${product.slug}`}
           className="group relative col-span-3 row-span-3 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-center"
         >
           <Image
