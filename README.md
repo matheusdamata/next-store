@@ -2,7 +2,7 @@
 
 Este é um projeto de loja online desenvolvido com Next.js 14, React e TypeScript.
 
-![Imagem da Home](https://imgur.com/lKo0wRX)
+![Imagem da Home](https://i.imgur.com/lKo0wRX.png)
 
 ## Recursos
 
