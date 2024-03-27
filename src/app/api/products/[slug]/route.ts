@@ -22,7 +22,5 @@ export async function GET(
     )
   }
 
-  console.log('product', product)
-
   return Response.json(product)
 }
